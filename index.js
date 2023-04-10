@@ -2,7 +2,8 @@ const http=require("http");
 const fs=require("fs")
 const server=http.createServer((req,res)=>{
       if(req.url==="/"){
-        res.end("hello");
+        // res.setHeader("Content-type","text/html")
+        res.end("<h1>Hey this is html</h1>");
       } 
     //   else if(req.url==="/reports"){
     //     res.end("reports");
