@@ -5,6 +5,18 @@ const server=http.createServer((req,res)=>{
         // res.setHeader("Content-type","text/html")
         res.end("<h1>Hey this is html</h1>");
       } 
+      else if(req.url==="/adddata"&&req.method==="POST"){
+        let str=""
+        req.on("data",(packet)=>{
+          str+=packet;
+        })
+        req.on("end",()=>{
+          console.log(str);
+        })
+        
+
+        res.end("Hey I got your data")
+      }
     //   else if(req.url==="/reports"){
     //     res.end("reports");
     //   } 
